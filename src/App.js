@@ -1,16 +1,28 @@
 import './App.css';
 import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
+import Header from './Components/Header/Header';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './Pages/Home';
 
 function App() {
   const { data, isLoading } = useFeaturedBanners();
   console.log(data, isLoading);
+  
+  const getSearchResult = (newSearch) => {
+    console.log(newSearch);
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        hey
-      </header>
-    </div>
+    <Router>
+      <Header getSearchResult={getSearchResult}/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+      </Routes>
+    </Router>
   );
 }
 
