@@ -10,7 +10,7 @@ export const StyledContainer = styled.div`
     margin: 2%;
     padding: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 100%;
+    height: 100vh;
 `;
 
 export const StyledLinkForHamburguer = styled(Link)`
@@ -239,4 +239,14 @@ export const StyledLogoImg = styled.img`
     @media (max-width: 550px) {
         display: none;
     }
+`;
+
+export const StyledFooter = styled.footer`
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2%;
+    padding: 1%;
+    border-top: solid 1px #E4E4E4;
+    font-size: 0.8rem;
 `;
