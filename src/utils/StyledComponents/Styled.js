@@ -224,11 +224,9 @@ export const StyledFlexContainer = styled.div`
 
 export const StyledLogoBrand = styled.img`
     height: 50px;
-    margin-left: 1rem;
-    position: relative;
-    bottom: 0.5em;
+   
 
-    @media (max-width: 600px) {
+    @media (max-width: 730px) {
         display: none;
     }
 `;
@@ -236,8 +234,6 @@ export const StyledLogoBrand = styled.img`
 export const StyledLogoImg = styled.img`
     margin-left: 1rem;    
     height: 50px;
-    position: relative;
-    bottom: 0.5em;  
     transform: rotate(180deg);
 
     @media (max-width: 550px) {

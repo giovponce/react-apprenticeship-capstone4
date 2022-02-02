@@ -16,8 +16,7 @@ const iconStyle = {
 }
 const hamburguer = {
     position: "relative",
-    top: "0.5em",
-    display: "flex"
+    top: "1.5vh",
 }
 
 const MobileNavigation = ({getSearchResult}) => {
@@ -27,12 +26,48 @@ const MobileNavigation = ({getSearchResult}) => {
             <StyledHamburguerContainer>
             <StyledFlexContainer>
                     <div style={hamburguer}>
-                        <div>
+                        <StyledInputForHamburguer type="checkbox"/>
+                        <StyledSpanForHamburguer/>
+                        <StyledSpanForHamburguer/>
+                        <StyledSpanForHamburguer/>
+
+                        <StyledUlForHamburguer>
+                            <StyledLi>
+                                <StyledLinkForHamburguer to="/">
+                                    Home
+                                </StyledLinkForHamburguer>
+                            </StyledLi>
+                            <StyledLi>
+                                <StyledLinkForHamburguer to="/cart">
+                                    Cart
+                                </StyledLinkForHamburguer>
+                            </StyledLi>
+                        </StyledUlForHamburguer>
+                        
+                        </div>
+                        
+                        <StyledLogoImg src={require("../../assets/images/logo-white.png")} alt="logo"/>
+                        <StyledLogoBrand src={require("../../assets/images/brand.png")} alt="logo"/>
+                        
+                    <StyledFlexContainer>
+                        <Search getSearchResult={getSearchResult}/>
+                        <StyledLinkForHamburguer to="/cart">
+                            <MdOutlineShoppingCart style={iconStyle}/>
+                        </StyledLinkForHamburguer>
+                    </StyledFlexContainer>
+                    </StyledFlexContainer>
+            </StyledHamburguerContainer>
+        </StyledMobileNav>
+        {/* <StyledMobileNav>
+            <StyledHamburguerContainer>
+            <StyledFlexContainer>
+                    <div style={hamburguer}>
+                        
                             <StyledInputForHamburguer type="checkbox"/>
                             <StyledSpanForHamburguer/>
                             <StyledSpanForHamburguer/>
                             <StyledSpanForHamburguer/>
-                        </div>
+                        
                         <StyledUlForHamburguer>
                             <StyledLi>
                                 <StyledLinkForHamburguer to="/">Home</StyledLinkForHamburguer>
@@ -54,7 +89,7 @@ const MobileNavigation = ({getSearchResult}) => {
                     </StyledFlexContainer>
                     </StyledFlexContainer>
             </StyledHamburguerContainer>
-        </StyledMobileNav>
+        </StyledMobileNav> */}
         </>
         
     )
