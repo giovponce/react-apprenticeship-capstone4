@@ -43,7 +43,7 @@ export const StyledSpanForHamburguer = styled.span`
     height: 4px;
     margin-bottom: 5px;
     position: relative;
-    background: white;
+    background: #f5f0ec;
     border-radius: 3px;
     z-index: 1;
     transform-origin: 4px 0px;
@@ -77,10 +77,10 @@ export const StyledHamburguerContainer = styled.div`
     // z-index: 1;
     // -webkit-user-select: none;
     // user-select: none;
-    background-color: #333;
+    background-color: #3B473F;
     ${StyledLinkForHamburguer} {
         text-decoration: none;
-        color: white;
+        color: #f5f0ec;
         font-family: sans-serif;
         font-size: 1.2rem;
         text-transform: capitalize;
@@ -120,7 +120,7 @@ export const StyledHamburguerContainer = styled.div`
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
-    color: white;
+    color: #f5f0ec;
     font-family: sans-serif;
     font-size: 1.2rem;
     text-transform: capitalize;
@@ -143,7 +143,7 @@ export const StyledUl = styled.ul`
 
 export const StyledLi = styled.li`
     text-decoration: none !important;
-    color: white;
+    color: #f5f0ec;
     text-align: center;
     padding: 2%;
 `;
@@ -183,12 +183,11 @@ export const StyledFakeLinkForHamburguer = styled.p`
 
 export const SearchInput = styled.input`
     display: inline-flex;
-    
+    background-color: #f5f0ec;
     padding: 3px;
     padding-left: 3.5em;
     border: solid 1px #E4E4E4;
     border-radius: 6px;
-    background-color: #F1F3F4;
     color: #202124;
     width: 30vw;
     height: 2em;
@@ -203,8 +202,12 @@ export const SearchInput = styled.input`
         width: 35vh;
     }
 
-    @media (max-width: 350px) {
+    @media (max-width: 425px) {
         width: 25vh;
+    }
+
+    @media (max-width: 350px) {
+        width: 15vh;
     }
 `;
 
@@ -217,4 +220,27 @@ export const SearchFormStyled = styled.form`
 export const StyledFlexContainer = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+
+export const StyledLogoBrand = styled.img`
+    height: 50px;
+    margin-left: 1rem;
+    position: relative;
+    bottom: 0.5em;
+
+    @media (max-width: 600px) {
+        display: none;
+    }
+`;
+
+export const StyledLogoImg = styled.img`
+    margin-left: 1rem;    
+    height: 50px;
+    position: relative;
+    bottom: 0.5em;  
+    transform: rotate(180deg);
+
+    @media (max-width: 550px) {
+        display: none;
+    }
 `;
