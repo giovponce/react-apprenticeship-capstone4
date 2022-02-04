@@ -7,7 +7,7 @@ import  banners  from '../mocks/en-us/featured-banners.json'
 import 'swiper/css';
 import 'swiper/css/virtual';
 
-export default () => {
+export default function SwiperBanners () {
   
   const slides = banners.results;
 

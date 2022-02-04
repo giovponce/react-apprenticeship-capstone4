@@ -37,7 +37,7 @@ export const StyledUlForHamburguer = styled.ul`
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    z-index: 1;
+    z-index: 2;
     flex-flow: column;
     
     &li{
@@ -54,7 +54,7 @@ export const StyledSpanForHamburguer = styled.span`
     position: relative;
     background: #f5f0ec;
     border-radius: 3px;
-    z-index: 1;
+    z-index: 3;
     transform-origin: 4px 0px;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -63,15 +63,15 @@ export const StyledSpanForHamburguer = styled.span`
 
 export const StyledInputForHamburguer = styled.input`
     display: block;
-   width: 40px;
-   height: 32px;
-   position: absolute;
-   top: -7px;
-   left: -5px;
-   cursor: pointer;
-   opacity: 0;
-   z-index: 2; 
-   -webkit-touch-callout: none;
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: -17px;
+    left: -18px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 3; 
+    -webkit-touch-callout: none;
 `;
 
 export const StyledHamburguerContainer = styled.div`
@@ -81,11 +81,6 @@ export const StyledHamburguerContainer = styled.div`
     margin-right: 1rem;
     padding: 1%;
     position: relative;
-    // top: 50px;
-    // left: 50px;
-    // z-index: 1;
-    // -webkit-user-select: none;
-    // user-select: none;
     background-color: #3B473F;
     ${StyledLinkForHamburguer} {
         text-decoration: none;
@@ -298,7 +293,7 @@ export const GridContainer = styled.div`
     margin-right: 1rem;
 `;
 
-export const Card = styled.div`
+export const StyledCard = styled.div`
     box-shadow: 0px 0px 5px #E4E4E4;
     border-radius: 10px;
     cursor: pointer;
@@ -307,4 +302,9 @@ export const Card = styled.div`
     &:hover {
         box-shadow: 0px 0px 10px #888888;
     }
+`;
+
+export const HamburguerDiv = styled.div`
+    position: relative;
+    top: 1.5vh;
 `;

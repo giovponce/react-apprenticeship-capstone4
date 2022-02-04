@@ -3,7 +3,7 @@ import {
     StyledInputForHamburguer, StyledUlForHamburguer, 
     StyledSpanForHamburguer, StyledHamburguerContainer, 
     StyledLinkForHamburguer, StyledFlexContainer,
-    StyledLogoImg, StyledLogoBrand } from "../../utils/StyledComponents/Styled";
+    StyledLogoImg, StyledLogoBrand, HamburguerDiv } from "../../utils/StyledComponents/Styled";
 
 import Search from "./Search";
 import { MdOutlineShoppingCart } from "react-icons/md";
@@ -14,10 +14,6 @@ const iconStyle = {
     marginLeft: "1em",
     cursor: "pointer"
 }
-const hamburguer = {
-    position: "relative",
-    top: "1.5vh",
-}
 
 const MobileNavigation = ({getSearchResult}) => {
     return (
@@ -25,7 +21,7 @@ const MobileNavigation = ({getSearchResult}) => {
         <StyledMobileNav>
             <StyledHamburguerContainer>
             <StyledFlexContainer>
-                    <div style={hamburguer}>
+                    <HamburguerDiv>
                         <StyledInputForHamburguer type="checkbox"/>
                         <StyledSpanForHamburguer/>
                         <StyledSpanForHamburguer/>
@@ -44,7 +40,7 @@ const MobileNavigation = ({getSearchResult}) => {
                             </StyledLi>
                         </StyledUlForHamburguer>
                         
-                        </div>
+                        </HamburguerDiv>
                         
                         <StyledLogoImg src={require("../../assets/images/logo-white.png")} alt="logo"/>
                         <StyledLogoBrand src={require("../../assets/images/brand.png")} alt="logo"/>

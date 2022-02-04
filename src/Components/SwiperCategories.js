@@ -8,7 +8,7 @@ import  categories  from '../mocks/en-us/product-categories.json'
 import { ImgForCategories, StyledH1, StyledH3 } from "../utils/StyledComponents/Styled";
 
 
-export default function App() {
+export default function SwiperCategories() {
   const slides = categories.results;
 
   return (
