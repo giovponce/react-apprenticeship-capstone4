@@ -1,8 +1,17 @@
 import React from 'react';
-import { StyledContainer } from '../utils/StyledComponents/Styled';
+import { BlockedStyledContainer } from '../utils/StyledComponents/Styled';
+import SwiperBanners from '../Components/SwiperBanners';
+import SwiperCategories from '../Components/SwiperCategories';
+import ProductGrid from '../Components/ProductGrid';
 
 export default function Home() {
   return (
-  <StyledContainer>this is the home</StyledContainer>
+  <BlockedStyledContainer>
+    <SwiperBanners />
+    <br/><br/><br/>
+    <SwiperCategories />
+    <br/><br/><br/>
+    <ProductGrid />
+  </BlockedStyledContainer>
   );
 }

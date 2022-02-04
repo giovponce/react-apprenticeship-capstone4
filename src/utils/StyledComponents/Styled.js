@@ -13,6 +13,15 @@ export const StyledContainer = styled.div`
     height: 100vh;
 `;
 
+export const BlockedStyledContainer = styled.div`
+    display: block;
+    text-align: center;
+    margin: 2%;
+    padding: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+`;
+
 export const StyledLinkForHamburguer = styled(Link)`
     text-decoration: none;
 `;
@@ -159,6 +168,20 @@ export const StyledH1 = styled.h1`
     font-weight: bolder;
 `;
 
+export const StyledH3 = styled.h3`
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: capitalize;
+`;
+
+export const StyledH4 = styled.h4`
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bolder;
+    text-transform: capitalize;
+`;
+
 export const StyledTitle = styled.p`
     font-size: 2rem;
     text-align: center;
@@ -249,4 +272,39 @@ export const StyledFooter = styled.footer`
     padding: 1%;
     border-top: solid 1px #E4E4E4;
     font-size: 0.8rem;
+`;
+
+export const ImgForSlider = styled.img`
+    position: relative;
+    bottom: 10em;
+`;
+
+export const ImgForCategories = styled.img`
+    height: 200px;
+    cursor: pointer;
+`;
+
+export const ImgForProducts = styled.img`
+    height: 12em;
+    width: 12em;
+`;
+
+export const GridContainer = styled.div`
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+`;
+
+export const Card = styled.div`
+    box-shadow: 0px 0px 5px #E4E4E4;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 1rem;
+
+    &:hover {
+        box-shadow: 0px 0px 10px #888888;
+    }
 `;
