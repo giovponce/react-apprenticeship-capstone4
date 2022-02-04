@@ -1,28 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
-import { useFeaturedBanners } from './utils/hooks/useFeaturedBanners';
+import Header from './Components/Header/Header';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Home from './Pages/Home';
+import Cart from './Pages/Cart';
+import Footer from './Components/Footer';
 
 function App() {
-  const { data, isLoading } = useFeaturedBanners();
-  console.log(data, isLoading);
+  
+  const getSearchResult = (newSearch) => {
+    console.log(newSearch);
+  }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header getSearchResult={getSearchResult}/>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/cart' element={<Cart/>} />
+      </Routes>
+      <Footer/>
+    </Router>
   );
 }
 
