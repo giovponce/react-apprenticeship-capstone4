@@ -10,7 +10,18 @@ export const StyledContainer = styled.div`
     margin: 2%;
     padding: 2%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 100vh;
+    height: auto;
+`;
+
+export const StyledContainer2 = styled.div`
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 2%;
+    padding: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: auto;
+
 `;
 
 export const BlockedStyledContainer = styled.div`
@@ -28,7 +39,7 @@ export const StyledLinkForHamburguer = styled(Link)`
 
 export const StyledUlForHamburguer = styled.ul`
     position: absolute;
-    width: 30%;
+    width: 20vw;
     margin: -100px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -240,9 +251,19 @@ export const StyledFlexContainer = styled.div`
     justify-content: space-between;
 `;
 
+export const StyledFlexCenteredContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 90vw;
+
+    @media (max-width: 900px) {
+        display: grid;
+    }
+`;
+
 export const StyledLogoBrand = styled.img`
     height: 50px;
-   
+    cursor: pointer;
 
     @media (max-width: 730px) {
         display: none;
@@ -253,6 +274,7 @@ export const StyledLogoImg = styled.img`
     margin-left: 1rem;    
     height: 50px;
     transform: rotate(180deg);
+    cursor: pointer;
 
     @media (max-width: 550px) {
         display: none;
@@ -291,6 +313,56 @@ export const GridContainer = styled.div`
     margin-top: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
+
+    ${props => props.variant === 'medium' ? 'width: 70vw;' : ''}
+
+`;
+
+export const SpinnerContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 50px 0px 50px 0px;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    ${props => props.variant === 'medium' ? 'width: 70vw;' : ''}
+
+    @media (min-width: 901px) {
+        width: 90vw;
+    }
+
+`;
+
+export const PaginationDiv = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+export const PaginationUl = styled.ul`
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+`;
+
+export const PaginationLi = styled.li`
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #202124;
+    font-size: 1rem;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: #3B473F;
+        color: #fff;
+    }
 `;
 
 export const StyledCard = styled.div`
@@ -308,3 +380,152 @@ export const HamburguerDiv = styled.div`
     position: relative;
     top: 1.5vh;
 `;
+
+export const Button = styled.button`
+    background-color: #5D6F63;
+    color: #f5f0ec;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    &:hover {
+        background-color: #9BABA0;
+        color: #f5f0ec;
+    }
+`;
+
+export const StyledLabel = styled.label`
+  background: transparent;
+`;
+
+export const StyledMobileLabel = styled.label`
+  background: transparent;
+`;
+
+export const StyledCheckbox = styled.input`
+  
+    &:checked + ${StyledLabel} {
+        text-decoration: underline;
+        background: lightgray;
+    }
+`;
+
+export const StyledMobileCheckbox = styled.input`
+  
+    &:checked + ${StyledLabel} {
+        text-decoration: underline;
+        background: lightgray;
+    }
+`;
+
+export const Chip = styled.div`
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: default;
+    height: 36px;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    font-color: #333333;
+    font-family:"Open Sans", sans-serif;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #3B473F;
+        color: #fff;
+    }
+`;
+
+export const ChipContent = styled.div`
+    cursor: inherit;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+`;
+
+export const ChipMobile = styled.div`
+    display: inline-flex;
+    flex-direction: row;
+    background-color: #e5e5e5;
+    border: none;
+    cursor: default;
+    height: 36px;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    font-color: #333333;
+    font-family:"Open Sans", sans-serif;
+    white-space: nowrap;
+    align-items: center;
+    border-radius: 16px;
+    vertical-align: middle;
+    text-decoration: none;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #3B473F;
+        color: #fff;
+    }
+`;
+
+export const ChipMobileContent = styled.div`
+    cursor: inherit;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    white-space: nowrap;
+    padding-left: 12px;
+    padding-right: 12px;
+`;
+
+export const AllProductsContainer = styled.div`
+    display: flex;
+    width: 95vw;
+`;
+
+export const FlexSpaceBetween = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+
+export const StyledFilterContainer = styled.div`
+    width: 20vw;
+    display: none;
+
+    @media (min-width: 901px) {
+        display: block;
+        pointer-events: auto;
+    }
+
+    @media (max-width: 900px) {
+        display: none;
+        pointer-events: none;
+    }
+`;
+
+export const StyledMobileFilterContainer = styled.div`
+    display: none;
+
+    @media (max-width: 900px) {
+        display: block;
+    }
+`;
+
+

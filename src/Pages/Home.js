@@ -1,8 +1,8 @@
 import React from 'react';
-import { BlockedStyledContainer } from '../utils/StyledComponents/Styled';
+import { BlockedStyledContainer, StyledH1 } from '../utils/StyledComponents/Styled';
 import SwiperBanners from '../Components/SwiperBanners';
 import SwiperCategories from '../Components/SwiperCategories';
-import ProductGrid from '../Components/ProductGrid';
+import ProductsGrid from '../Components/ProductsGrid';
 
 export default function Home() {
   return (
@@ -11,7 +11,8 @@ export default function Home() {
     <br/><br/><br/>
     <SwiperCategories />
     <br/><br/><br/>
-    <ProductGrid />
+    <StyledH1>Featured Products</StyledH1>
+    <ProductsGrid featured={true}/>
   </BlockedStyledContainer>
   );
 }
