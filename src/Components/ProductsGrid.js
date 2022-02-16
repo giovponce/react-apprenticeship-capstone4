@@ -3,6 +3,7 @@ import  products  from '../mocks/en-us/products.json';
 import  featuredProducts  from '../mocks/en-us/featured-products.json';
 import { GridContainer, SpinnerContainer, Button, StyledDescription } from '../utils/StyledComponents/Styled';
 import Card from './Card';
+import { Link } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
 
 export default function ProductGrid({featured, categories, mobileCategories}) {
@@ -54,7 +55,7 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
             ))}
             
           </GridContainer>
-          <Button onClick={()=>{( window.location.href ='/all');}}>View all products</Button>
+          <Link to="/all"><Button>View all products</Button></Link>
         </>
       ) : filteredProducts.length > 0 ? (
         <>
