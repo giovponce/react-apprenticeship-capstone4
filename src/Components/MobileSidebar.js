@@ -34,7 +34,7 @@ export default function MobileSidebar({toggleMobileCategory}) {
               return (
                 <ChipMobile key={index} onClick={(e)=> {toggleCategorySelection(category.id, index)}}>
                   <ChipMobileContent>
-                    <StyledMobileCheckbox id="input" type="checkbox" value={category.data.name} checked={checkedState[index]} onChange={e => {}}/>
+                    <StyledMobileCheckbox id="input" type="checkbox" value={category.data.name} checked={checkedState[index]}/>
                     <StyledMobileLabel htmlFor="input">{category.data.name}</StyledMobileLabel>
                   </ChipMobileContent>
                 </ChipMobile>
