@@ -20,7 +20,9 @@ function App() {
     <BrowserRouter>
       <Header getSearchResult={getSearchResult}/>
       <Routes>
-        <Route path='/' element={<Home/>} />
+        {["/home", "/"].map((path, index) => 
+        <Route path={path} element={<Home/>} key={index} />
+        )}
         <Route path='/all' element={<ProductList/>} />
         <Route path='/cart' element={<Cart/>} />
       </Routes>
