@@ -10,7 +10,6 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
 
   const productsFromApi  = useProducts();
   const products = productsFromApi.data.results ? productsFromApi.data.results : [];
-  console.log(products);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [loading, setLoading] = useState(false);
@@ -40,12 +39,11 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
         setLoading(false);
       } , 2000);
     }
-  } , [categories]);
+  } , [categories, mobileCategories]);
 
 
   const shuffled = products.sort(() => 0.5 - Math.random());
   let selected = shuffled.slice(0, 5);
-  console.log(selected);
 
   return (
     <>
