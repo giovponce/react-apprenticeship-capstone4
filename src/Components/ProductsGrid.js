@@ -4,12 +4,17 @@ import Card from './Card';
 import { Link } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
 import { useProducts } from '../utils/hooks/useProducts';
+import { useFeaturedProducts } from '../utils/hooks/useFeaturedProducts';
 
 
 export default function ProductGrid({featured, categories, mobileCategories}) {
 
   const productsFromApi  = useProducts();
   const products = productsFromApi.data.results ? productsFromApi.data.results : [];
+
+  const featuredProductsFromApi  = useFeaturedProducts();
+  const featuredProducts = featuredProductsFromApi.data.results ? featuredProductsFromApi.data.results : [];
+  console.log(featuredProducts);
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [loading, setLoading] = useState(false);
@@ -42,7 +47,7 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
   } , [categories, mobileCategories]);
 
 
-  const shuffled = products.sort(() => 0.5 - Math.random());
+  const shuffled = featuredProducts.sort(() => 0.5 - Math.random());
   let selected = shuffled.slice(0, 5);
 
   return (
