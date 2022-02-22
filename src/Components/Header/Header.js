@@ -7,6 +7,7 @@ import {
 
 import Search from "./Search";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 const iconStyle = {
@@ -49,8 +50,12 @@ const Header = ({getSearchResult}) => {
                         
                         </HamburguerDiv>
                         
-                        <StyledLogoImg data-testid="logo" onClick={()=>{ window.location.href ='/'}} src={require("../../assets/images/logo-white.png")} alt="logo"/>
-                        <StyledLogoBrand onClick={()=>{ window.location.href ='/'}} src={require("../../assets/images/brand.png")} alt="logo"/>
+                        <Link to="/">
+                            <StyledLogoImg data-testid="logo" src={require("../../assets/images/logo-white.png")} alt="logo"/>
+                        </Link>
+                        <Link to="/">
+                            <StyledLogoBrand src={require("../../assets/images/brand.png")} alt="logo"/>
+                        </Link>
                         
                     <StyledFlexContainer>
                         <Search getSearchResult={getSearchResult}/>
