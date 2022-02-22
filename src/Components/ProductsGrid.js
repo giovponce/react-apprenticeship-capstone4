@@ -1,20 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import  products  from '../mocks/en-us/products.json';
-import  featuredProducts  from '../mocks/en-us/featured-products.json';
 import { GridContainer, SpinnerContainer, Button, StyledDescription } from '../utils/StyledComponents/Styled';
 import Card from './Card';
 import { Link } from 'react-router-dom';
 import { BounceLoader } from 'react-spinners';
+import { useProducts } from '../utils/hooks/useProducts';
+
 
 export default function ProductGrid({featured, categories, mobileCategories}) {
 
-  const [filteredProducts, setFilteredProducts] = useState(products.results);
+  const productsFromApi  = useProducts();
+  const products = productsFromApi.data.results ? productsFromApi.data.results : [];
+  console.log(products);
+
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
     setLoading(true);
     if(categories?.length > 0 && mobileCategories?.length === 0) {
-      const newFilteredProducts = products.results.filter((product) =>
+      const newFilteredProducts = products.filter((product) =>
         categories.includes(product.data.category.id)
       );
       setFilteredProducts(newFilteredProducts);
@@ -22,7 +27,7 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
         setLoading(false);
       } , 2000);
     }else if(mobileCategories?.length > 0){
-      const newFilteredProducts = products.results.filter((product) =>
+      const newFilteredProducts = products.filter((product) =>
         mobileCategories.includes(product.data.category.id)
       );
       setFilteredProducts(newFilteredProducts);
@@ -30,7 +35,7 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
         setLoading(false);
       } , 2000);
     }else{
-      setFilteredProducts(products.results);
+      setFilteredProducts(products);
       setTimeout(() => {
         setLoading(false);
       } , 2000);
@@ -38,8 +43,9 @@ export default function ProductGrid({featured, categories, mobileCategories}) {
   } , [categories]);
 
 
-  const shuffled = featuredProducts.results.sort(() => 0.5 - Math.random());
-  let selected = shuffled.slice(0, 8);
+  const shuffled = products.sort(() => 0.5 - Math.random());
+  let selected = shuffled.slice(0, 5);
+  console.log(selected);
 
   return (
     <>
