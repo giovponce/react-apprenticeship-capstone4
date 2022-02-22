@@ -304,6 +304,7 @@ export const ImgForCategories = styled.img`
 export const ImgForProducts = styled.img`
     height: 12em;
     width: 12em;
+    cursor: pointer;
 `;
 
 export const GridContainer = styled.div`
@@ -368,7 +369,6 @@ export const PaginationLi = styled.li`
 export const StyledCard = styled.div`
     box-shadow: 0px 0px 5px #E4E4E4;
     border-radius: 10px;
-    cursor: pointer;
     padding: 1rem;
 
     &:hover {
@@ -528,4 +528,16 @@ export const StyledMobileFilterContainer = styled.div`
     }
 `;
 
+export const AddToCart = styled.p`
+    cursor: pointer;
+    color: #5D6F63;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    &:hover {
+        color: #3B473F;
+    }
+`;
 
