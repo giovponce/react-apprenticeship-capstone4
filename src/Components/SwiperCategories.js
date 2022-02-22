@@ -4,12 +4,14 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
-import  categories  from '../mocks/en-us/product-categories.json'
 import { ImgForCategories, StyledH1, StyledH3 } from "../utils/StyledComponents/Styled";
+import { useCategories } from '../utils/hooks/useCategories';
 
 
 export default function SwiperCategories() {
-  const slides = categories.results;
+
+  const  categoriesFromApi  = useCategories();
+  const slides = categoriesFromApi.data.results ? categoriesFromApi.data.results : [];
 
   return (
     <>
