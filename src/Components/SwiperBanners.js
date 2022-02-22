@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from "swiper";
 import { ImgForSlider } from '../utils/StyledComponents/Styled';
-import  banners  from '../mocks/en-us/featured-banners.json'
+import { useFeaturedBanners } from '../utils/hooks/useFeaturedBanners';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -9,7 +10,8 @@ import 'swiper/css/virtual';
 
 export default function SwiperBanners () {
   
-  const slides = banners.results;
+  const  bannersFromApi  = useFeaturedBanners();
+  const slides = bannersFromApi.data.results ? bannersFromApi.data.results : [];
 
   return (
     <>
